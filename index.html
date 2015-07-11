@@ -11,24 +11,27 @@
   <title>Spotify Challenge</title>
 </head>
 <body>
+  <h1>Mad Libs ---> Spotify Playlist</h1>
+  <h3>Directions: Fill in the blanks below with reasonable responses. After completion, press the submit button to generate a custom playlist based on responses. Have fun!</h3>
   <div ng-app="myApp" ng-controller="myCtrl">
   <form name="songForm">
-    <div class="form-group">
-      <label>Spotify search:</label>
-      <input name="search" ng-minlength=3 placeholder="Enter your search.." ng-model="track" class="form-control" required></input>
-    <p class="help-block" ng-show="songForm.search.$error.minlength">Enter 3+ characters</p>
-    </div>
-    <div class="form-group">
-      <button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
-    </div>
-  </form>
-  <div>
-      <div class="container-fixed">
-        <p ng-show="tracks.length>0" class="help-block">Click to sample</p>
+  <div class="form-group">
+    <p>Hi, my name is <input name="name" placeholder="first name" ng-model="track"></input>.</p>
+    <p>I was born in <input name="month" placeholder="month" ng-model="track2"></input>, <input name="year" placeholder="year" ng-minlength=4></input>.</p>
+    <p class="help-block" ng-show="songForm.search.$error.minlength">Between 1915 and 2015</p>
+    <p>I love the color <input name="color" placeholder="color"></input> and my favorite kind of music is <input name="genre" placeholder="music genre"></input>.</p>
+    <p>But most importantly, I am a web developer who is always feeling <input name="emotion" placeholder="emotion"></input>.</p>
+    <p>As a web developer, I rate my skills <input name="number" placeholder="number (zero to ten)" ng-minlength=3></input> out of ten.</p>
+    <p class="help-block" ng-show="songForm.search.$error.minlength">Type out number (ex. 1 --> one)</p>
+    <p>When writing code in HTML, my favorite type of tag is <input name="tag" placeholder="html tag w/o <>"></input>.</p>
+    <button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs(); getSongs2()" type="submit">Submit</button>
+  </div>
+</form>
+ <div class="container-fixed">
+        <p ng-show="tracks.length>0" class="help-block">Playlist created! Click image to sample track!</p>
         <div ng-class="track.preview_url == currentSong ? 'playing' : ''"  ng-repeat="track in tracks" class="col-xs-4 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track2.preview_url == currentSong ? 'playing' : ''"  ng-repeat="track2 in tracks" class="col-xs-4 img"><img ng-click="play(track2.preview_url)" title="{{track2.name}}" src="{{track2.album.images[1].url}}"></img></div>
     </div>
     </div>
-  </div>
-  </div>
 </body>
 </html>
