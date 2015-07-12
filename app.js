@@ -8,6 +8,8 @@ var myCtrl = myApp.controller('myCtrl', function($scope, $http) {
   $scope.getSongs = function() {
     $http.get(baseUrl + $scope.track).success(function(response) {
       data1 = $scope.tracks = response.tracks.items
+    })
+  }   
   $scope.getSongs2 = function() {
     $http.get(baseUrl + $scope.track2).success(function(response) {
       data2 = $scope.tracks = response.tracks.items
