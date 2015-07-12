@@ -29,8 +29,8 @@
 </form>
  <div class="container-fixed">
         <p ng-show="tracks.length>0" class="help-block">Playlist created! Click image to sample track!</p>
-        <div ng-class="track.preview_url == currentSong ? 'playing' : ''"  ng-repeat="track in tracks" class="col-xs-4 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
-        <div ng-class="track2.preview_url == currentSong ? 'playing' : ''"  ng-repeat="track2 in tracks" class="col-xs-4 img"><img ng-click="play(track2.preview_url)" title="{{track2.name}}" src="{{track2.album.images[1].url}}"></img></div>
+        <div ng-class="data1.preview_url == currentSong ? 'playing' : ''" ng-repeat="data1 in tracks" class="col-xs-3 img"><img ng-click="play(data1.preview_url)" title="{{data1.name}}" src="{{data1.album.images[1].url}}"></img></div>
+        <div ng-class="data2.preview_url == currentSong ? 'playing' : ''" ng-repeat="data2 in tracks" class="col-xs-3 img"><img ng-click="play(data2.preview_url)" title="{{data2.name}}" src="{{data2.album.images[1].url}}"></img></div>
     </div>
     </div>
 </body>
