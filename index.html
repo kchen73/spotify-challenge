@@ -6,31 +6,31 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
 <script src="app.js"></script>
-<link href="app.css" type="text/css" />
+<link rel="stylesheet" href="main.css"/>
   <meta charset="utf-8">
   <title>Spotify Challenge</title>
 </head>
 <body>
-  <h1>Mad Libs ---> Spotify Playlist</h1>
+  <h1>Mad Libs ~ Spotify Playlist</h1>
   <h3>Directions: Fill in the blanks below with reasonable responses. After completion, press the submit button to generate a custom playlist based on responses. Have fun!</h3>
   <div ng-app="myApp" ng-controller="myCtrl">
   <form name="songForm">
   <div class="form-group">
-    <p>Hi, my name is <input name="name" placeholder="first name" ng-model="track"></input>.</p>
-    <p>I was born in <input name="month" placeholder="month" ng-model="track2"></input>, <input name="year" placeholder="year" ng-minlength=4></input>.</p>
-    <p class="help-block" ng-show="songForm.search.$error.minlength">Between 1915 and 2015</p>
-    <p>I love the color <input name="color" placeholder="color"></input> and my favorite kind of music is <input name="genre" placeholder="music genre"></input>.</p>
-    <p>But most importantly, I am a web developer who is always feeling <input name="emotion" placeholder="emotion"></input>.</p>
-    <p>As a web developer, I rate my skills <input name="number" placeholder="number (zero to ten)" ng-minlength=3></input> out of ten.</p>
-    <p class="help-block" ng-show="songForm.search.$error.minlength">Type out number (ex. 1 --> one)</p>
-    <p>When writing code in HTML, my favorite type of tag is <input name="tag" placeholder="html tag w/o <>"></input>.</p>
-    <button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs(); getSongs2()" type="submit">Submit</button>
+    <h4>HTML CODING<h4>
+    <label>Coding in HTML is very simple. Even if you are in <input name="country" placeholder="country" ng-model="track" ng-minlength=4 required></input><p class="help-block" ng-show="songForm.country.$error.minlength">Enter 4+ Characters</p>, HTML coding can be done. However, one of the most important things people forget to do while they code is listen to <input name="adjective" placeholder="adjective" ng-model="track2" ng-minlength=3><p class="help-block" ng-show="songForm.adjective.$error.minlength">Enter 3+ Characters</p></input> music while eating <input name="food" placeholder="food" ng-model="track3" ng-minlength=3><p class="help-block" ng-show="songForm.food.$error.minlength">Enter 3+ Characters</p></input>. When coding in HTML, it is important that the  HTML attribute <input name="attribute" placeholder="attribute" ng-model="track4"></input> is added in the HTML tag &#60;<input name="tag" placeholder="tag" ng-model="track5"></input>>. Once you have completed your code, be sure to celebrate by drinking <input name="number" placeholder="number (type out)" ng-model="track6" ng-minlength=3></input><p class="help-block" ng-show="songForm.number.$error.minlength">Enter 3+ Characters</p> glasses of <input name="liquid" placeholder="type of liquid" ng-model = "track7" ng-minlength=3><p class="help-block" ng-show="songForm.liquid.$error.minlength">Enter 3+ Characters</p></input> and celebrate by partying like a/an <input name="animal" placeholder="animal" ng-model="track8" ng-minlength=3></input><p class="help-block" ng-show="songForm.animal.$error.minlength">Enter 3+ Characters</p>.</label>
+    <button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs(); getSongs2(); getSongs3(); getSongs4(); getSongs5(); getSongs6(); getSongs7(); getSongs8();" type="submit">Submit Reponses!</button>
   </div>
 </form>
  <div class="container-fixed">
         <p ng-show="tracks.length>0" class="help-block">Playlist created! Click image to sample track!</p>
-        <div ng-class="data1.preview_url == currentSong ? 'playing' : ''" ng-repeat="data1 in tracks" class="col-xs-3 img"><img ng-click="play(data1.preview_url)" title="{{data1.name}}" src="{{data1.album.images[1].url}}"></img></div>
-        <div ng-class="data2.preview_url == currentSong ? 'playing' : ''" ng-repeat="data2 in tracks" class="col-xs-3 img"><img ng-click="play(data2.preview_url)" title="{{data2.name}}" src="{{data2.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks2" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks3" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks4" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>    
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks5" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks6" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks7" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
+        <div ng-class="track.preview_url == currentSong ? 'playing' : ''" ng-repeat="track in tracks8" class="col-xs-3 img"><img ng-click="play(track.preview_url)" title="{{track.name}}" src="{{track.album.images[1].url}}"></img></div>
     </div>
     </div>
 </body>
